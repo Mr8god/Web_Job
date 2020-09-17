@@ -5,7 +5,7 @@ function years(obj, Cyear) {
     var newOpt; // OPTION对象
 
     // 循环添加OPION元素到年份select对象中
-    for (var i = 1; i <= len; i++) {
+    for ( i = 1; i <= len; i++) {
         if (selObj.options.length != len) { // 如果目标对象下拉框升度不等于设定的长度则执行以下代码
             newOpt = window.document.createElement("OPTION"); // 新建一个OPTION对象
             newOpt.text = Cyear - len + i; // 设置OPTION对象的内容
@@ -18,7 +18,7 @@ function years(obj, Cyear) {
 function months(){
     var month = document.getElementById("month");
     month.length = 0; 
-    for (var i = 1; i < 13; i++) { 
+    for ( i = 1; i < 13; i++) { 
         month.options.add(new Option(i, i)); 
     }
 }
