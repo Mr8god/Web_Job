@@ -1,0 +1,82 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        html{
+            font-size: 10px;
+        }
+        body{
+            font-size: 16px;
+        }
+        /* 样式文件 */
+        /* 这个点是类选择器 */
+        .div-css01{
+            font-size: 2rem;
+            width: 10rem;
+            height: 10rem;
+            border: solid 1px grey;
+        }
+
+        .div-css011{
+            font-size: 2rem;
+            width: 10rem;
+            height: 10rem;
+            color: blue;
+            border-style: solid;
+            border-width: 1px;
+        }
+
+        .div-css02{
+            width: 10rem;
+            height: 10rem;
+            color: blue;
+            border-style: solid;
+            border-width: 1px;
+            text-align: center;
+            line-height: 10rem;
+        }
+
+        .inner{
+            width: 100px;
+            height: 100px;
+            background: grey;
+        }
+        /* px em rem */
+        /* 系统默认字体大小14px */
+        .btn{
+            /* font-size: 30px; */
+            /* em是相对值，相对于字体 */
+            font-size: 30px;
+        }
+
+        a{
+            color: grey;
+            text-decoration: none;
+
+            cursor: pointer;
+        }
+
+        .p-a{
+            cursor: pointer;
+            text-decoration: underline;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="div-css011"> div content</div>
+
+    <p class="div-css02">
+        <a class="inner">p content</a>
+    </p>
+    
+    <input type="button" value="login...">
+
+    <a href="#">baidu.com</a>
+
+    <p class="p-a">163.com</p>
+</body>
+</html>
