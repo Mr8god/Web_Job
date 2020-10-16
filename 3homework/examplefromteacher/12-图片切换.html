@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #outer img{
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div id="outer">
+        <div>
+            <img id="my_img" src="imgs/x2.jpg">
+        </div>
+        <div>
+            <a href="javascript:change_img(0)">1</a>
+            <a href="javascript:change_img(1)">2</a>
+            <a href="javascript:change_img(2)">3</a>
+        </div>
+    </div>
+
+    <script>
+        //模拟一条数据
+        let arr = ["x2.jpg","x5.jpg","x6.jpg"];
+
+        let img = document.getElementById("my_img");
+
+        function change_img(num){
+            img.src="imgs/"+arr[num];
+        }
+    </script>
+</body>
+</html>

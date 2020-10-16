@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 如果出现了id属性 - 这个值必须要保证唯一的 -->
+    <input type="text" name="uname" id="username" value="admin">
+
+    <!-- name属性值是允许重复的 -->
+    <input type="text" class="c1" name="uname" id="username2" value="jack">
+
+    <input type="text" class="c1" name="uname" id="username3" value="tom">
+
+    <hr></hr>
+
+    <a href="http://www.baidu1.com">百度一下</a>
+    <a href="http://www.baidu2.com">百度二下</a>
+    <a href="http://www.baidu3.com">百度三下</a>
+
+    <script>
+        //1 - 根据id获取单个对象
+        let username_input = document.getElementById("username");
+        console.log(username_input);
+
+        //通过对象.属性进行获取
+        console.log(username_input.value);
+
+        //js重新设置对象的属性
+        username_input.value = "james";
+
+        console.log("----华丽丽的分割线---");
+
+
+        //2 -  根据标签的name属性的值来返回一个数组对象
+        let uname_arr = document.getElementsByName("uname");
+        //数组拥有属性 - 获取数组的长度
+        console.log(uname_arr.length);
+
+        //数组中的具体的元素是可以通过下标进行获取的
+        //数组的下标的范围是从[0,数组长度-1]
+        //数组对象[下标]
+        //比如:从数组uname_arr中获取第二个input
+        let uname_arr_second = uname_arr[1];
+        //只有单个对象才能调用单个对象中的属性
+        console.log(uname_arr_second.value);
+
+        //3 - 通过class属性的值去获取数组对象
+        let c1_arr = document.getElementsByClassName("c1");//数组对象
+        console.log(c1_arr.length);//2
+
+        //比如取出第一个input
+        //支持链式写法
+        console.log(c1_arr[0].value);
+
+        //直接根据标签的名称来获取 - 返回的也是一个数组对象
+        let a_arr = document.getElementsByTagName("a");
+        console.log(a_arr.length);//3
+
+        //获取第三个a标签中的href属性
+        console.log(a_arr[2].href)
+
+    </script>
+</body>
+</html>

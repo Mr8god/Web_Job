@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>节点的位置</title>
+    <style>
+     
+        table,td{
+            border: 1px solid red;
+        }
+
+        td{
+            height: 25px;
+            width: 100px;
+        }
+
+        .c1{
+            background-color: red;
+        }
+    </style>
+    </style>
+</head>
+<body>
+    <div id="outer">
+        <table>
+            <tr>
+                <td>1001<a href="#">a3</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>1002<a href="#" onclick="test2(this)">a2</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <!-- <td>1003<a href="javascript:test(this)">a3</a></td> -->
+                <td>1003<a href="#" onclick="test(this)">a3</a></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function test(obj){//obj就是传入进来的this - 当前对象 - 调用事件的对象
+            //console.log(obj);//a标签
+
+            // 只要锁定到dom任何一个节点,都是可以通过相对位置来找到其余任何节点
+
+            //获取某个节点的父节点
+            let tr = obj.parentElement.parentElement;
+
+            //js是可以设置css样式
+            
+            //js是可以设置对象的属性的
+            tr.className="c1";
+            
+        }
+
+        function test2(obj){
+            //获取
+            let tr = obj.parentElement.parentElement;//tr
+
+            //下一个兄弟节点
+            //let up_tr = tr.nextElementSibling;
+
+            //上一个兄弟节点
+            let up_tr = tr.previousElementSibling;
+
+            up_tr.className="c1";
+        }
+    </script>
+</body>
+</html>

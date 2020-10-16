@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,td{
+            border: 1px solid red;
+        }
+
+        td{
+            height: 25px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" onclick="test()">添加一行</button>
+
+    <div id="outer">
+        <table>
+            <tbody id="content">
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+         </tbody>
+        </table>
+    </div>
+
+    <script>
+        function test(){//单击按钮触发的单击事件
+            //1. 获取tbody对象
+            let tbody = document.getElementById("content");
+
+            //2. 创建tr标签 - 返回出刚刚创建出来的标签
+            let tr = document.createElement("tr");
+
+            //3. 创建俩个td对象
+            for(let i=0;i<2;i++){
+                let td = document.createElement("td");
+                 //单元格td是要绑定到tr上
+                 tr.appendChild(td);
+            }
+            //3. 将刚刚创建出来的tr绑定到tbody中
+            tbody.appendChild(tr);
+        }
+    </script>
+</body>
+</html>
