@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>综合题</title>
+    <style>
+        .init{
+            font-size: 12px;
+            color: #999;
+        }
+
+        .success{
+            font-size: 12px;
+            color: green;
+        }
+
+        .fail{
+            font-size: 12px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h3>给小孩出题</h3>
+        <input type="number" placeholder="题目数量" value="20" id="num"></input>
+        <button type="button" onclick="creates()">出题</button>
+        <button type="button" onclick="check()">检测</button>
+    </div>
+    <div id="content">
+
+    </div>
+
+    <script>
+    
+         //+ -
+         let signs = ["+","-"];
+
+         let div = document.getElementById("content");
+
+        function creates(){
+            //获取文本框中的数值
+            let n = document.getElementById("num").value;
+
+            //使用到了js中的内置对象Math
+            //console.log(Math.random());//[0.0,1.0)
+
+            //1-100
+            //console.log(Math.random()*100+1);//[1.0,101.0)
+
+            //console.log(Math.floor(Math.random()*100+1));
+        
+
+            //直接使用字符串拼接
+            let str="<table>";
+            
+            for(let i=0;i<n;i++){
+                str+="<tr>";
+                
+                //拼接td
+                str+="<td class='exp'>";
+                
+                let first = Math.floor(Math.random()*100+1);
+                let two = Math.floor(Math.random()*100+1);
+                let sg = signs[Math.floor(Math.random()*signs.length)];
+
+                str+=(first+sg+two);
+                
+
+                str+="</td>";
+
+                str+="<td>";
+                str+="<input type='text'>"
+                str+="</td>";
+
+
+                str+="<td>";
+                str+="<span class='init'>*</span>"
+                str+="</td>";
+
+                str+="</tr>";
+            }
+
+            str+="</table>";
+
+            div.innerHTML = str;
+        }
+
+        function check(){
+            //1.获取所有的表达式的td
+            let arr = document.getElementsByClassName("exp");
+            //2.数组的遍历 0-arr.length-1
+            for(let i=0;i<arr.length;i++){
+                //获取每个td
+                //console.log(eval(arr[i].innerText));
+                let right_value = eval(arr[i].innerText);
+
+                //节点的位置
+                let input_value = arr[i].nextElementSibling.getElementsByTagName("input")[0];
+               
+                let span = arr[i].nextElementSibling.nextElementSibling.getElementsByTagName("span")[0];
+
+                if(right_value == input_value.value){
+                    
+                    span.className="success";
+                    span.innerHTML="* √"
+                }else{
+                    span.className="fail";
+                    span.innerHTML="* ×"+right_value;
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
