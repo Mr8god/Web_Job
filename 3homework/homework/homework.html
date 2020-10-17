@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js动态增加tr，批量删除指定tr</title>
+
+    <style>
+        table, td{
+            border: 1px solid red;
+        }
+
+        td{
+            height: 25px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" onclick="addtr()">动态添加行</button>
+    <button type="button" onclick='deletr("dept")'>批量删除行</button>
+
+    <td style="cursor: hand; height: 22px;" align="center" width="23">
+        <input type="checkbox" name="check" value="${book.id}"/>
+    </td>
+
+    <div id="outer">
+        <table>
+            <tbody id="formal_content">
+                <tr>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function addtr(){
+            
+            let tbody = document.getElementById("formal_content");
+
+            let tr = document.createElement("tr");
+
+            let td = document.createElement("td");
+
+            let dept = document.createElement("dept");
+
+            td.appendChild(dept);
+
+            tr.appendChild(td);
+
+            tbody.appendChild(tr);
+        }
+
+        function deletr(field){
+            field = document.getElementsByName(File);
+
+            for(i = 0; i < field.length; i++){
+                filed[i].checked = true;
+            }
+        }
+
+        function delAllProduct(){
+            var cks = document.getElementsByName("check");
+            var str = "";
+            for(var i = 0; i < cks.length; i++){
+                if(cks[i].checked){
+                    str += "id" + cks[i].value + "&";
+                }
+            }
+
+            str = str.substring(0, str.length - 1);
+            location.href = "${pageContext.request.contextPath}/servlet/delAllBooksServlet?"+str;
+        }
+    </script>
+</body>
+</html>
