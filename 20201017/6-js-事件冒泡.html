@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="div01">
+        <button id="btn01">1</button>
+        <button id="btn02">2</button>
+        <button id="btn03">3</button>
+        <button id="btn04">4</button>
+        <button id="btn05">5</button>
+        <button id="btn06">6</button>
+    </div>
+
+
+    <script>
+        document.querySelector('#div01').onclick=function(e){
+            if(e.target==this){
+                alert('i am div');
+            }
+            // alert('i am div');
+
+            // alert(e.target);
+        }
+
+        document.querySelector('#div01').onclick=function(event){
+            // alert('i am button');
+            // event.stopPropagation();
+
+            alert(event.target);
+        }
+
+        // document.querySelector('#div01').addEventListener('click', function(ev){
+        //     alert(this==ev.target);
+        // })
+
+        gl.onclick=function(e){
+            var target=e.target;
+            if(target.nodeName=='BUTTON'){
+                if(target.innerHTML=='+'){
+                    target.previousElementSibling.value+=1;
+                }else{
+                    target.ElementSibling.value-=1
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

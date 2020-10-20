@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul, li{
+            list-style: ;
+        }
+
+        a{
+            text-decoration: none;
+            color: black;
+        }
+
+        ul{
+            display: flex;
+            width: 600px;
+        }
+
+        ul li{
+            flex: 1;
+            border: solid 1px grey;
+            margin: 10px;
+            text-align: center;
+            padding: 5px 0px;
+        }
+
+        .selector{
+            border-color: red;
+        }
+
+        .selected{
+
+        }
+    </style>
+</head>
+<body>
+    <ul class="type">
+        <li><a href="">link1</a></li>
+        <li class="selected li-css"><a href="">link2</a></li>
+        <li><a href="">link3</a></li>
+        <li><a href="">link4</a></li>
+        <li><a href="">link5</a></li>
+    </ul>
+
+    <ul>
+        <li>aa</li>
+    </ul>
+
+    <script>
+        var lis=document.querySelectorAll('.type li')
+
+        // lis[1].className='selected';
+        // lis[1].classList.add('selected');
+
+        // lis[1].classList.remove('selected');
+
+        for(i=0; i<lis.length; i++){
+            lis[i].onclick=function(){
+                for(var j = 0; j<lis.length; j++){
+                    lis[j].classList.remove('selected');
+                }
+                this.classList.add('selected');
+            }
+        }
+
+        // window.alert('ok');
+    </script>
+</body>
+</html>
