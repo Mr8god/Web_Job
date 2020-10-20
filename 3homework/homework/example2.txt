@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <link rel="stylesheet" href="layui/layui/css/layui.css">
+</head>
+<body class="layui-bg-gray">
+    <div style="text-align: center;">
+        <div>
+            <input type="text" id="inp">
+        </div>
+    
+        <div class="layui-btn-container layui-anim-up" >
+            <button type="button" class="layui-btn" onclick="addStr(1)">1</button>
+            <button type="button" class="layui-btn" onclick="addStr(2)">2</button>
+            <button type="button" class="layui-btn" onclick="addStr(3)">3</button>
+            <button type="button" class="layui-btn" onclick="addStr('+')">＋</button><br/>
+    
+            <button type="button" class="layui-btn" onclick="addStr(4)">4</button>
+            <button type="button" class="layui-btn" onclick="addStr(5)">5</button>
+            <button type="button" class="layui-btn" onclick="addStr(6)">6</button>
+            <button type="button" class="layui-btn" onclick="addStr('-')">-</button><br/>
+    
+            <button type="button" class="layui-btn" onclick="addStr(7)">7</button>
+            <button type="button" class="layui-btn" onclick="addStr(8)">8</button>
+            <button type="button" class="layui-btn" onclick="addStr(9)">9</button>
+            <button type="button" class="layui-btn" onclick="addStr('*')">×</button><br/>
+            
+            <button type="button" class="layui-btn" onclick="cls()">C</button>
+            <button type="button" class="layui-btn" onclick="addStr(0)">0</button>
+            <button type="button" class="layui-btn" onclick="calc()">=</button>
+            <button type="button" class="layui-btn" onclick="addStr('/')">÷</button><br/>
+            
+            <button type="button" class="layui-btn" onclick="back()">←</button>
+        </div>
+    </div>
+    
+    <script src="js/main.js"></script>
+    <script src="layui/layui/layui.js"></script>
+</body>
+</html>

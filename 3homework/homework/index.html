@@ -4,35 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-<body>
-    <div>
-        <input type="text" id="inp">
-    </div>
-
-    <div>
-        <button onclick="cls()">C</button>
-        <button onclick="back()">←</button>
-        <button onclick="addStr('/')">÷</button>
-        <button onclick="addStr('*')">×</button>
-        <button onclick="addStr('+')">＋</button>
-        <button onclick="addStr('-')">－</button>
-    </div>
-
-    <div>
-        <button onclick="addStr(1)">1</button>
-        <button onclick="addStr(2)">2</button>
-        <button onclick="addStr(3)">3</button>
-        <button onclick="addStr(4)">4</button>
-        <button onclick="addStr(5)">5</button>
-        <button onclick="addStr(6)">6</button>
-        <button onclick="addStr(7)">7</button>
-        <button onclick="addStr(8)">8</button>
-        <button onclick="addStr(9)">9</button>
-    </div>
-
-    <div>
-        <button onclick="calc()">＝</button>
+<body>   
+    <div class="calculator">
+        <div class="outerborder">
+            <div>
+                <input class="inp" type="text" id="inp">
+            </div> 
+        
+            <div>
+                <button class="num" onclick="addStr(1)">1</button>
+                <button class="num" onclick="addStr(2)">2</button>
+                <button class="num" onclick="addStr(3)">3</button>
+                <button class="num" onclick="addStr('+')">＋</button><br/>
+        
+                <button class="num" onclick="addStr(4)">4</button>
+                <button class="num" onclick="addStr(5)">5</button>
+                <button class="num" onclick="addStr(6)">6</button>
+                <button class="num" onclick="addStr('-')">-</button><br/>
+        
+                <button class="num" onclick="addStr(7)">7</button>
+                <button class="num" onclick="addStr(8)">8</button>
+                <button class="num" onclick="addStr(9)">9</button>
+                <button class="num" onclick="addStr('*')">×</button><br/>
+                
+                <button class="num" onclick="cls()">C</button>
+                <button class="num" onclick="addStr(0)">0</button>
+                <button class="num" onclick="calc()">=</button>
+                <button class="num" onclick="addStr('/')">÷</button><br/>
+                
+                <button class="num clear" onclick="back()">←</button>
+            </div>
+        </div>
     </div>
 
     <script src="js/main.js"></script>
