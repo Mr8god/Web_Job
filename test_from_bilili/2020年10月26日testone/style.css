@@ -1,0 +1,105 @@
+:root {
+    --background-color: #f5f5f5;
+    --border-color: #7591AD;
+    --text-color:  #34495e;
+    --color1: #EC3E27;
+    --color2: #fd79a8;
+    --color3: #0984e3;
+    --color4: #00b894;
+    --color5: #fdcb6e;
+    --color6: #e056fd;
+    --color7: #F97F51;
+    --color8: #BDC581;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif, Arial, Helvetica, sans-serif;
+}
+
+.channel {
+    position: absolute;
+    width: 80%;
+    text-align: center;
+    top: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 5vmin;
+    font-weight: bold;
+    color: #35353588;
+    z-index: 10000;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    /* background-color: #00b894; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#switch {
+    position: absolute;
+    width: 60px;
+    height: 30px;
+    border: 2px solid #333;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+#switch::before, #switch::after {
+    position: absolute;
+    line-height: 26px;
+    text-transform: uppercase;
+    padding: 0 20px;
+    /* background-color: #0984e3; */
+    cursor: initial;
+    pointer-events: none;
+}
+
+#switch::before {
+    content: 'slow';
+    right: 100%;
+}
+
+#switch::after {
+    content: 'fast';
+    left: 100%;
+}
+
+/* 默认情况是这样的 */
+#switch .circle {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    box-shadow: inset 4px -2px 0 0 var(--color8);
+    transition: all .3s cubic-bezier(.86, 1.51, .74, 1);
+
+}
+
+/* 当点击选中的情况之后 */
+#switch.switched .circle{
+    left: calc(100% - 20px - 3px);
+    box-shadow: inset 4px -2px 0 0 var(--color3);
+
+}

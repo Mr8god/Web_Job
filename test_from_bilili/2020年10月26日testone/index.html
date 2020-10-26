@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>编译中梦见未来</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="channel">
+        bilibili from 编译中梦见未来 I am just learning
+    </div>
+    <div class="container">
+        <div id="switch" class="switched">
+            <div class="circle"></div>
+        </div>
+    </div>
+
+    <script>
+
+        let swch = document.getElementById('switch');
+
+        // 绑定点击事件
+        swch.addEventListener('click', (e) => {
+            // swch.classList.toggle('switched')
+            if (swch.classList.contains('switched')) {
+                swch.classList.remove('switched');
+            } else {
+                swch.classList.add('switched');
+            }
+
+        });
+    </script>
+</body>
+</html>
