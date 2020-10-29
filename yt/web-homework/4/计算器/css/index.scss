@@ -1,0 +1,223 @@
+@import 'tool';
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+  overflow: hidden;
+}
+
+input[type='button'] {
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+body {
+  background-color: #f2f5f8;
+  font-family: 'Commissioner', 'Noto Sans SC', 'PingFang SC', miui,
+    -apple-system, system-ui, 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// .fade {
+//   opacity: 0;
+//   pointer-events: none;
+// }
+
+// // 缩放动画
+// @keyframes scale {
+//   0% {
+//     transform: scale(0.2);
+//   }
+
+//   100% {
+//     transform: scale(1);
+//   }
+// }
+
+#calculator {
+  border-radius: 8px;
+
+  background-color: rgba($color: #000000, $alpha: 0.65);
+  box-shadow: 0 6px 16px rgba($color: #000000, $alpha: 0.2),
+    0 -3px 8px rgba($color: #000000, $alpha: 0.2);
+  backdrop-filter: blur(15px);
+  overflow: hidden;
+
+  .header {
+    height: 25px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    > input[type='button'] {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      margin-left: 8px;
+
+      &:first-of-type {
+        margin-left: 14px;
+      }
+
+      &.red {
+        background-color: #fb5753;
+      }
+
+      &.yellow {
+        background-color: #e8bf33;
+      }
+
+      &.green {
+        background-color: #55c12a;
+      }
+    }
+  }
+
+  // 使用太精确的值会导致渲染上的一些问题
+  // $sqrt_2: sqrt(2);
+  $width: 250;
+  .main {
+    width: #{$width}px;
+    height: #{$width * 1.4}px;
+
+    display: grid;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+
+    > .screen {
+      font-family: inherit;
+
+      grid-column: 1 / 5;
+      grid-row: 1 / 3;
+
+      padding: 8px;
+
+      display: flex;
+      flex-flow: column;
+      align-items: flex-end;
+      justify-content: flex-end;
+
+      > #line1,
+      > #line2 {
+        color: #cccccc;
+        transition: all 0.4s;
+      }
+
+      > #line1 {
+        transform-origin: right bottom;
+      }
+
+      > #line2 {
+        transform-origin: right top;
+
+        &::before {
+          content: ' ';
+          display: inline-block;
+          height: 1em;
+        }
+      }
+
+      > .show {
+        font-size: 2.4em;
+        color: #ffffff !important;
+      }
+    }
+
+    > input[type='button'] {
+      font-family: inherit;
+      user-select: none;
+
+      color: #ffffff;
+      background-color: #8c8c8c;
+      transition: background 0.3s;
+      font-size: 16px;
+
+      margin-right: 1px;
+      margin-bottom: 1px;
+
+      &:active {
+        box-shadow: inset 0px 0px 80px 0px rgba(0, 0, 0, 0.25);
+      }
+
+      // 最后一列
+      &:nth-of-type(4n),
+      &:last-of-type {
+        margin-right: 0px;
+      }
+
+      // 最后一行
+      &:nth-last-of-type(3),
+      &:nth-last-of-type(3) ~ input[type='button'] {
+        margin-bottom: 0px;
+      }
+
+      &.fn {
+        background-color: #6a6a6a;
+      }
+
+      &.op {
+        background-color: #ff9e2d;
+      }
+
+      &.zero {
+        grid-column: 1 /3;
+      }
+    }
+  }
+}
+
+.copyright {
+  font-style: italic;
+  letter-spacing: 1px;
+  color: #8c8c8c;
+
+  position: fixed;
+  bottom: 20px;
+  right: 40px;
+
+  > span {
+    margin-left: 4px;
+    font-style: normal;
+  }
+}
+
+// 使得字符跳动
+.char-jump {
+  font-size: 1rem;
+  cursor: pointer;
+
+  @keyframes char-jump-ani {
+    0% {
+      bottom: 0px;
+    }
+
+    50% {
+      bottom: 24px;
+    }
+
+    70% {
+      bottom: 1px;
+    }
+
+    85% {
+      bottom: 6px;
+    }
+
+    100% {
+      bottom: 0px;
+    }
+  }
+}
