@@ -1,0 +1,13 @@
+.item>img {
+    width: 1000px !important;
+    height: 6em;
+}
+
+
+
+#myCarousel {
+    width: 1000px;
+    /* 居中 */
+    
+    margin: 0 auto; 
+}
