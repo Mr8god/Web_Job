@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../plugins/bootstrap-3.3.7-dist/css/bootstrap.css">
+
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- 左边部分 -->
+           <div class="col-md-offset-2 col-md-2">
+               <div style="border: 1px solid #000;">
+                    left
+               </div>
+           </div>
+
+           <!-- 右边的部分 -->
+           <div class="col-md-6 hidden-xs">
+                <!-- 嵌套用法 -->
+                <div class="row" style="border:1px solid red;height:350px">
+                    <div class="col-md-4" style="border: 1px solid green;">r01</div>
+                    <div class="col-md-4" style="border: 1px solid green;">r01</div>
+                    <div class="col-md-4">r01</div>
+                </div>
+           </div>
+        </div>
+    </div>
+    
+    <!-- bootstrap框架是依赖于jquery框架,bootstrap.js文件中使用到了jquery语法,所以必须
+    先引入jquery.js文件 -->
+    <script src="../plugins/jquery/jquery.min.js"></script>
+    <script src="../plugins/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../plugins/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <style>
+        .czz{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            padding: 5px;
+        }
+
+    /* login登录
+       后端技术 - 1. 密码加密[前端加密,后端加密,不能明文进行存储的] - HS256 - 不可逆.
+                 2. 防爬的验证码
+                 3. 手机验证码 - 安全 - 阿里短信api,聚合数据
+                 4. 登录之后+有效信息=token里面
+                 5. 分布式 - token放入到redis里面
+                 6. 发送验证码 - 消息队列
+                 7. 权限 - shiro或者SpringSecurity...
+     */
+    </style>
+</head>
+<body>
+
+    <!-- 导航begin -->
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="navbar navbar-inverse" role="navigation">
+                <div class="container-fluid"> 
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#example-navbar-collapse">
+                        <span class="sr-only">切换导航</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">江科大</a>
+                </div>
+                <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">首页</a></a></li>
+                        <li class="active"><a href="#" data-toggle="modal" data-target="#myModal">登录</a></li>
+                        <li><a href="#">注册</a></a></li>
+                        <li><a href="#">我的购物车</a></a></li>
+                        <li><a href="#">我的订单</a></a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                个人中心 <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">jmeter</a></li>
+                                <li><a href="#">EJB</a></li>
+                                <li><a href="#">Jasper Report</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">分离的链接</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">另一个分离的链接</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <img src="../imgs/zz.jpg" class="czz">
+                        </li>
+                    </ul>
+                </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- 导航end -->
+
+    <!--轮播begin - swiper-->
+    <div class="container-fluid" style="margin-top: -20px;">
+        <div class="row">
+            <div id="myCarousel" class="carousel slide">
+                <!-- 轮播（Carousel）指标 -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>   
+                <!-- 轮播（Carousel）项目 -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <!-- img图片应该是切出来的 -->
+                        <img src="../imgs/advert1.jpg" alt="First slide">
+                    </div>
+                    <div class="item">
+                        <img src="../imgs/advert2.jpg" alt="Second slide">
+                    </div>
+                    <div class="item">
+                        <img src="../imgs/advert3.jpg" alt="Third slide">
+                    </div>
+                </div>
+                <!-- 轮播（Carousel）导航 -->
+                <a class="carousel-control left" href="#myCarousel" 
+                   data-slide="prev"> <span _ngcontent-c3="" aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span></a>
+                <a class="carousel-control right" href="#myCarousel" 
+                   data-slide="next">&rsaquo;</a>
+            </div>
+        </div>
+    </div>
+
+    <!--轮播end-->
+
+    <!-- model - begin -->
+    <!-- 模态框（Modal） -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">用户登录入口</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                          <label for="firstname" class="col-sm-2 control-label">用户名</label>
+                          <div class="col-md-8">
+                            <input type="text" class="form-control" id="firstname" placeholder="请输入名字">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="lastname" class="col-sm-2 control-label">密码</label>
+                          <div class="col-md-8">
+                            <input type="password" class="form-control" id="lastname" placeholder="请输入密码">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="col-sm-offset-2 col-sm-10">
+                            <div class="checkbox">
+                              <label>
+                                <input type="checkbox">请记住我
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default">登录</button>
+                          </div>
+                        </div>
+                      </form>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary">提交更改</button>
+                </div> -->
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+    <!--end-->
+
+    
+    <!-- bootstrap框架是依赖于jquery框架,bootstrap.js文件中使用到了jquery语法,所以必须
+    先引入jquery.js文件 -->
+    <script src="../plugins/jquery/jquery.min.js"></script>
+    <script src="../plugins/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+
+    <!-- <script>
+        $(function(){
+            $('#myCarousel').carousel({
+                interval: 2000
+            })
+        })
+    </script> -->
+</body>
+</html>
