@@ -1,0 +1,51 @@
+.item>img {
+    width: 1620px !important;
+    height: 605px;
+}
+
+.arrow>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    margin: auto;
+    width: 100px;
+    height: 600px;
+
+}
+
+.arrow-shadow {
+}
+
+.shadow::before,
+.shadow::after {
+   content:"";
+   position:absolute;
+   z-index:-1;
+}
+
+#myCarousel {
+    width: 1000px;
+    /* 居中 */
+    margin: 0 auto; 
+}
+
+.navbar-self {
+    width: 1000px;
+    margin: 0 auto;
+    border: none !important;
+}
+
+.carousel-control.left {
+    background-image:none;
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+}
+
+.carousel-control.right {
+   left: auto; right: 0;
+   background-image:none;
+   background-repeat: repeat-x;
+   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+} 
